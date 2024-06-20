@@ -50,3 +50,22 @@ console.log(Object.keys(tinderuser));// it will return the value in array
 console.log(Object.entries(tinderuser));// every key value k akta kore array banay r seta array te return kore
 
 console.log(tinderuser.hasOwnProperty('isLogged'));
+
+//destructuring
+const course={
+    coursename:'js',
+    courseInstructor:'jade',
+    price:369
+}
+const{courseInstructor}=course;
+console.log(courseInstructor);
+//or
+const{courseInstructor:instructor}=course;
+console.log(instructor);
+
+//json, json doesn't have any name, in json keys and values will be string
+// {
+//    "name":'js',
+//    "courseinstructor":'jade',
+//    "price":'free'
+// }
