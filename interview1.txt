@@ -1,1 +1,45 @@
 1.execution context-
+global execution context e this er modde code rakhe
+2.js is single threaded
+3.2 types of context-global execution, functional execution context. global er vitor eval execution context(mongo er eita)
+4.js code run in two phases- 1. memory creation phase(variable er jonno memory allocation) 2.executon phase
+
+
+// how the code will execute
+let val1=10,
+let val2=5
+function addnum(n1,n2){
+    let total=n1+n2
+    return total
+}
+let result1=addnum(val1,val2)
+let result2=addnum(10,1)
+
+
+1- global execution (then it will locate in 'this')
+2.memory phase- er modde all variables will be store.
+        val1=undefined
+        val2=undefined
+        addnum=defination(function er vitor er sob)
+        result1=undefined
+        result2=undefined
+3.execution phase-
+        val1=10
+        val2=5
+        addnum er kono kaj nai cz oitar defination agei hold kore rakhci
+        result1= in result1 it will go to addnum- it will make new executional context (variable environment + execution threade) jotobar function run hobe totobar akta kore ex context phase create hobe. then baki 2 ta phase kaj korbe 1-memory phase
+            val1-undefined
+            val2-undefined
+            total-undefined
+        and 2-execution phase
+            n1=10
+            n2=5
+            total=15
+            total k amra global executional context e return kore dei
+        after all that the sand box or executional box will be deleted
+        result1=15
+        result2= will repeate the step of result1
+
+
+// callstack
+lifo works here(last in first out)
