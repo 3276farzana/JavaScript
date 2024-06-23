@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aliceblue; color: white;">
+    <div class="lang">
+        <li>js</li>
+        <li>html</li>
+    </ul>
+</body>
+<script>
+    function addlang(langname){
+        const list=document.createElement('li');
+        list.innerHTML=`${langname}`
+        document.querySelector('.lang').appendChild(list)
+    }
+    addlang('pyhton')
+    addlang('c')
+    // more optimization way
+    function addOptiLang(langname){
+        const list=document.createElement('li');
+        list.appendChild(document.createTextNode(langname));
+        document.querySelector('.lang').appendChild(list)
+    }
+    addOptiLang('c')
+    addOptiLang('python')
+
+    // edit
+    const secondlang=document.querySelector('li:nth-child(2)')
+    // secondlang.innerHTML('react');
+// more optimization way is
+    const newli=document.createElement('li');
+    newli.textContent='react';
+    secondlang.replaceWith(newli)
+    // edit
+    let firstlang=document.querySelector('li:nth-child(1)')
+    firstlang.outerHTML='<li>cpp</li>'
+
+    // remove
+    const lastlang=document.querySelector('li:last-child')
+    lastlang.remove()
+    </script>
+</html>

@@ -23,6 +23,7 @@ console.log(arr.includes(93));
 console.log(arr.includes('ho'));
 console.log(arr.indexOf(13));
 
+
 //make arrays into string
 const newarr=arr.join();
 console.log(typeof newarr);
