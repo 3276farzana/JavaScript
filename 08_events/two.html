@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Blue sky</h2>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // set timeout just kaj akta 1 bar kore
+    const changeText= function () {
+        document.querySelector('h2').innerHTML='the hearts'
+    } 
+    // setTimeout(() => {
+    //     document.querySelector('h2').innerHTML('the hearts')
+    //     console.log('changed');
+    // }, 2000);
+
+    // give the reference of of function don't execute the function.
+    const change=setTimeout(changeText, 2000);
+
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearTimeout(change)
+        console.log('stoped changing');
+    })
+
+</script>
+</html>
