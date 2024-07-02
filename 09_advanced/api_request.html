@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> XMLHttpRequest</title>
+</head>
+<body>
+    The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
+
+Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requrl='https://api.github.com/users/3276farzana'
+    // making a Object
+    const api= new XMLHttpRequest();
+    // open send request 
+    api.open('GET',requrl)
+    // to keep it's track
+    api.onreadystatechange()=()=>{
+        console.log(api.readyState);
+        // to detect its state
+        if (api.readyState===4) {
+        //to convert string into jason= JASON.parse 
+      // console.log(this.responseText);
+            const data=JASON.parse(this.responseText); 
+            console.log(typeof data); // when you get response from url most of the time it comes in string
+            console.log(data.followers);
+        }
+
+    }
+    // open doesn't send own it's own so we call it using send
+    api.send()
+</script>
+</html>
