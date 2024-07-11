@@ -5,7 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Closure</title>
 </head>
-<body>
+<body style="background-color: black;">
+    <button id="green">green</button>
+    <button id="orange">orrange</button>
     
 </body>
+<!-- <script>
+    //lexical scoping
+
+    // function init() {
+    //     let name = "Mozilla"; // name is a local variable created by init
+    //     function displayName() {
+    //         // displayName() is the inner function, that forms the closure
+    //         console.log(name); // use variable declared in the parent function
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    //they both share the same memory
+    function outter(){
+        let username='farzana';
+        console.log('outter',score);
+        function inner(){
+            let score=255;
+            console.log('inner',username);
+        }
+        function innertwo(){
+            console.log('innerTwo', score);//cn't have access
+        }
+        inner();
+        innertwo();
+    }
+    outter
+    console.log(username);
+
+    //closure
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName
+    }
+//it's fully return the function
+    const myFunc = makeFunc();//when you execute fn it's scope also do vanish
+    myFunc();
+
+</script> -->
+<script>
+    // document.querySelector('#orange').onclick=function(){
+    //     document.body.style.backgroundColor=`orange`
+    // }
+    // document.querySelector('#green').onclick=function(){
+    //     document.body.style.backgroundColor=`green`
+    // }
+    function clickHandeler(color) {
+        document.body.style.backgroundColor=`${color}`
+    }
+    document.getElementById('orange').onclick=clickHandeler('orange');
+    document.getElementById('green').onclick=clickHandeler('green')
+</script>
 </html>
