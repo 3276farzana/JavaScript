@@ -61,7 +61,9 @@
     //     document.body.style.backgroundColor=`green`
     // }
     function clickHandeler(color) {
-        document.body.style.backgroundColor=`${color}`
+        return function(){
+            document.body.style.backgroundColor=`${color}`
+        }
     }
     document.getElementById('orange').onclick=clickHandeler('orange');
     document.getElementById('green').onclick=clickHandeler('green')
